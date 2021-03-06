@@ -2,13 +2,43 @@ body {
   background: #3f3f3f;
 }
 
-.wall {
-  position: absolute;
-}
-
-.back {
+.box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  perspective: 300px;
+  transform-style: preserve-3d;
+}
+
+.wall {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  perspective-origin: center;
+}
+
+.front {
+  transform-origin: center;
+}
+.back {
+  transform-origin: center;
+}
+.right {
+  transform: rotateY(90deg) translateZ(0px);
+  transform-origin: right;
+}
+.left {
+  transform: rotateY(-90deg) translateZ(0px);
+  transform-origin: left;
+}
+.ceiling {
+  transform: rotateX(90deg) translateZ(0px);
+  transform-origin: top;
+}
+.floor {
+  transform: rotateX(-90deg) translateZ(0px);
+  transform-origin: bottom;
 }
